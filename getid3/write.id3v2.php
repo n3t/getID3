@@ -1645,7 +1645,7 @@ class getid3_write_id3v2
 	}
 
 	public function ID3v2IsValidPriceString($pricestring) {
-		if (getid3_id3v2::LookupCurrencyUnits(substr($pricestring, 0, 3), true) == '') {
+		if (getid3_id3v2::LookupCurrencyUnits(substr($pricestring, 0, 3)) == '') {
 			return false;
 		} elseif (!getid3_id3v2::IsANumber(substr($pricestring, 3), true)) {
 			return false;
