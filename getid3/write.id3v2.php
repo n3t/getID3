@@ -966,7 +966,7 @@ class getid3_write_id3v2
 					$source_data_array['encodingid'] = (isset($source_data_array['encodingid']) ? $source_data_array['encodingid'] : $this->id3v2_default_encodingid);
 					if (!$this->ID3v2IsValidTextEncoding($source_data_array['encodingid'])) {
 						$this->errors[] = 'Invalid Text Encoding in '.$frame_name.' ('.$source_data_array['encodingid'].')';
-					} elseif (!getid3_id3v2::IsANumber($source_data_array['pricepaid']['value'], false)) {
+					} elseif (!getid3_id3v2::IsANumber($source_data_array['pricepaid']['value'], true)) {
 						$this->errors[] = 'Invalid Price Paid in '.$frame_name.' ('.$source_data_array['pricepaid']['value'].')';
 					} elseif (!getid3_id3v2::IsValidDateStampString($source_data_array['purchasedate'])) {
 						$this->errors[] = 'Invalid Date Of Purchase in '.$frame_name.' ('.$source_data_array['purchasedate'].') (format = YYYYMMDD)';
